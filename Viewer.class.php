@@ -1003,56 +1003,11 @@ class ModuleViewer extends Module {
             }
         }
 		
-		
-		
-		
-	/*	if ($oUserCurrent = E::ModuleUser()->GetUserCurrent()) {
 
-            // Получаем необходимые переменные и передаем в шаблон
-              
-            $aUserSubscribes = E::ModuleUserfeed()->GetUserSubscribes($oUserCurrent->getId());
-            $aFriends = E::ModuleUser()->GetUsersFriend($oUserCurrent->getId());
-            E::ModuleViewer()->Assign('aUserfeedSubscribedUsers', $aUserSubscribes['users']);
-            E::ModuleViewer()->Assign('aUserfeedFriends', $aFriends['collection']);
-        }
-		
-		     if ($oUserCurrent = E::ModuleUser()->GetUserCurrent()) {
-            $aUserSubscribes = E::ModuleUserfeed()->GetUserSubscribes($oUserCurrent->getId());
-
-            // Get ID list of blogs to which you subscribe
-            $aBlogsId = E::ModuleBlog()->GetBlogUsersByUserId(
-                $oUserCurrent->getId(),
-                array(
-                    ModuleBlog::BLOG_USER_ROLE_USER,
-                    ModuleBlog::BLOG_USER_ROLE_MODERATOR,
-                    ModuleBlog::BLOG_USER_ROLE_ADMINISTRATOR
-                ),
-                true
-            );
-
-            // Get ID list of blogs where the user is the owner
-            $aBlogsOwnerId = E::ModuleBlog()->GetBlogsByOwnerId($oUserCurrent->getId(), true);
-            $aBlogsId = array_merge($aBlogsId, $aBlogsOwnerId);
-
-            $aBlogs = E::ModuleBlog()->GetBlogsAdditionalData(
-                $aBlogsId, array('owner' => array()), array('blog_title' => 'asc')
-            );
-            // Выводим в шаблон
-            
-            E::ModuleViewer()->Assign('aUserfeedSubscribedBlogs', $aUserSubscribes['blogs']);
-            E::ModuleViewer()->Assign('aUserfeedBlogs', $aBlogs);
-        }
-		*/
-		//userfeedUsers
-		//userfeedBlogs
  		$r = $this->GetWidgets();
 		
-		// print_r($r);
-		//	 exit;
 		
 		if (isset($r['_all_'])){
-			//print_r($r['_all_']);
-			//exit;
 			
 			foreach ($r['_all_'] as $rr => $item){
 				$rr = 'Widget'.ucfirst(basename($rr));
@@ -1063,67 +1018,7 @@ class ModuleViewer extends Module {
  
 
 		 
-			 /** Добавление виджета блогов...
-         * Пользователь авторизован?
-         */
-        /*if ($oUserCurrent = E::ModuleUser()->GetUserCurrent()) {
-            
-            $aUserSubscribes = E::ModuleUserfeed()->GetUserSubscribes($oUserCurrent->getId());
-            $aFriends = E::ModuleUser()->GetUsersFriend($oUserCurrent->getId());
-            E::ModuleViewer()->Assign('aUserfeedSubscribedUsers', $aUserSubscribes['users']);
-            E::ModuleViewer()->Assign('aUserfeedFriends', $aFriends['collection']);
-        }*/
-		         // For authorized users only
-        /*if ($oUserCurrent = E::ModuleUser()->GetUserCurrent()) {
-            $aUserSubscribes = E::ModuleUserfeed()->GetUserSubscribes($oUserCurrent->getId());
-
-            // Get ID list of blogs to which you subscribe
-            $aBlogsId = E::ModuleBlog()->GetBlogUsersByUserId(
-                $oUserCurrent->getId(),
-                array(
-                    ModuleBlog::BLOG_USER_ROLE_USER,
-                    ModuleBlog::BLOG_USER_ROLE_MODERATOR,
-                    ModuleBlog::BLOG_USER_ROLE_ADMINISTRATOR
-                ),
-                true
-            );
-
-            // Get ID list of blogs where the user is the owner
-            $aBlogsOwnerId = E::ModuleBlog()->GetBlogsByOwnerId($oUserCurrent->getId(), true);
-            $aBlogsId = array_merge($aBlogsId, $aBlogsOwnerId);
-
-            $aBlogs = E::ModuleBlog()->GetBlogsAdditionalData(
-                $aBlogsId, array('owner' => array()), array('blog_title' => 'asc')
-            );
-            
-            E::ModuleViewer()->Assign('aUserfeedSubscribedBlogs', $aUserSubscribes['blogs']);
-            E::ModuleViewer()->Assign('aUserfeedBlogs', $aBlogs);
-        }
-		 */
-	
-		 
-		 
-		 
- 
-
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
+	 
 		 
        if (E::ActivePlugin('ls')) {
             // LS-compatible //
